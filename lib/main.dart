@@ -66,8 +66,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: appPrimaryColor),
             useMaterial3: true,
           ),
-          home: OnboardingScreen(),
-          // initialRoute: SplashScreen.routeName,
+          initialRoute: SplashScreen.routeName,
           getPages: AppRoutes.appRoutes,
           navigatorKey: NavigationService.navigatorKey,
         );

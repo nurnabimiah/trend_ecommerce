@@ -2,6 +2,7 @@
 
 class AppImages {
   /// Logos
+  static const String appLogo = 'assets/images/app_logo.png';
   static const String appLogo = 'assets/icons/app_logo.png';
 
   /// Icons
