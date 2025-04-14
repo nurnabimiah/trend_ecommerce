@@ -214,13 +214,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
 
             SliverToBoxAdapter(
-              child: CustomHomeScreenCarouselWidget(
-                items: clientSlider,
-              ),
-            ),
-
-
-            SliverToBoxAdapter(
                 child: szH15(),
             ),
             SliverToBoxAdapter(
