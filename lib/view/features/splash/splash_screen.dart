@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:ecommerce_app/utils/images/app_images.dart';
 import 'package:ecommerce_app/view/features/home_screen/home_screen.dart';
+import 'package:ecommerce_app/view/features/onboarding/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../data/repositories/local/sharepreferences_class.dart';
@@ -101,7 +102,8 @@ class _SplashScreenState extends State<SplashScreen> {
         Get.offAllNamed(BottomNavBarScreen.routeName);
         // Get.offAllNamed(OrderDetailsScreen.routeName);
       }else{
-        Get.offAllNamed(BottomNavBarScreen.routeName);
+       // Get.offAllNamed(BottomNavBarScreen.routeName);
+        Get.offAllNamed(OnboardingScreen.routeName);
         // Get.offAllNamed(OrderDetailsScreen.routeName);
       }
     });

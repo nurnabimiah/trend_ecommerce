@@ -5,6 +5,7 @@ import 'package:ecommerce_app/view/features/home_screen/home_screen.dart';
 import 'package:ecommerce_app/view/features/bottom_nav_bar_screen/bottom_nav_bar_screen.dart';
 import 'package:ecommerce_app/view/features/my_order_screens/my_order_screen.dart';
 import 'package:ecommerce_app/view/features/my_order_screens/order_details_screen.dart';
+import 'package:ecommerce_app/view/features/onboarding/screens/onboarding_screen.dart';
 import 'package:ecommerce_app/view/features/product_details/product_details_screen.dart';
 import 'package:ecommerce_app/view/features/products_landing_screen/products_landing_screen.dart';
 import 'package:ecommerce_app/view/features/sub_category_screen/sub_category_screen.dart';
@@ -38,6 +39,9 @@ class AppRoutes {
 
     // checkout
     GetPage(name: CheckOutScreen.routeName, page: () =>  CheckOutScreen(), transition: Transition.rightToLeft, transitionDuration:  Duration(milliseconds: duration)),
+
+    // Onboarding
+    GetPage(name: OnboardingScreen.routeName, page: () =>  OnboardingScreen(), transition: Transition.rightToLeft, transitionDuration:  Duration(milliseconds: duration)),
 
     // address setup
     GetPage(name: DeliveryAddressSetupScreen.routeName, page: () =>  DeliveryAddressSetupScreen(), transition: Transition.rightToLeft, transitionDuration:  Duration(milliseconds: duration)),

@@ -25,6 +25,7 @@ class AppImages {
   static const String deleteAccount= 'assets/icons/delete_account.png';
 
 
+
   /// profile image
   static const String profileAvatar = 'assets/profile_image/profile_avatar.png';
 
