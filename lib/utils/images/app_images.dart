@@ -43,6 +43,14 @@ class AppImages {
   static const String sliderImage2 = 'assets/slider_image/slider_image_2.jpg';
   static const String audio = 'assets/slider_image/quiz_sound.mp3';
 
+  /// onboarding image
+  static const String onboardBg1 = 'assets/onboarding/onboarding_bg1.svg';
+  static const String onboardBg1Purchases = 'assets/onboarding/obboard_purchases_bg1.svg';
+  static const String onboardBg2 = 'assets/onboarding/onboarding_bg2.svg';
+  static const String onboardBg2TrackOrder= 'assets/onboarding/onboarding_track_bg2.svg';
+  static const String onboardBg3 = 'assets/onboarding/onboarding_bg3.svg';
+  static const String onboardBg3GetOrder= 'assets/onboarding/onboarding_getorder_bg3.svg';
+
 
 
 }
