@@ -44,6 +44,7 @@ class AppImages {
   static const String audio = 'assets/slider_image/quiz_sound.mp3';
 
   /// onboarding image
+  static const String appSmallLogo = 'assets/onboarding/app_small_logo.svg';
   static const String onboardBg1 = 'assets/onboarding/onboarding_bg1.svg';
   static const String onboardBg1Purchases = 'assets/onboarding/obboard_purchases_bg1.svg';
   static const String onboardBg2 = 'assets/onboarding/onboarding_bg2.svg';

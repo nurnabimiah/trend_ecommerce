@@ -2,9 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import '../controller/onboarding_controller.dart';
+
 
 class OnboardingScreen extends StatelessWidget {
   static const String routeName = '/onboarding';
@@ -32,6 +31,8 @@ class OnboardingScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
+
+
           Expanded(
             child: PageView.builder(
               controller: controller.pageController,
@@ -53,6 +54,8 @@ class OnboardingScreen extends StatelessWidget {
               },
             ),
           ),
+
+
           Obx(() => Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(3, (index) {
