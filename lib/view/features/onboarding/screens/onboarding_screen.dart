@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controller/onboarding_controller.dart';
+import '../widget/onboarding_page1.dart';
 
 
 class OnboardingScreen extends StatelessWidget {
@@ -10,18 +11,16 @@ class OnboardingScreen extends StatelessWidget {
   final controller = Get.put(OnboardingController());
 
   final onboardingData = [
-    {
-      "title": "Welcome",
-      "desc": "Explore our awesome app.",
-    },
-    {
-      "title": "Stay Updated",
-      "desc": "Get real-time updates and news.",
-    },
-    {
-      "title": "Get Started",
-      "desc": "Let's begin your journey today.",
-    },
+    OnboardingPage1()
+
+    // {
+    //   "title": "Stay Updated",
+    //   "desc": "Get real-time updates and news.",
+    // },
+    // {
+    //   "title": "Get Started",
+    //   "desc": "Let's begin your journey today.",
+    // },
   ];
 
   OnboardingScreen({super.key});
