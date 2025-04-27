@@ -12,7 +12,7 @@ class OnboardingScreen extends StatelessWidget {
 
   final onboardingData = [
     OnboardingPage1()
-  //
+   // y
     // {
     //   "title": "Stay Updated",
     //   "desc": "Get real-time updates and news.",
