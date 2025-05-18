@@ -51,7 +51,7 @@ class OnboardingPage2 extends StatelessWidget {
                   ],
                 )
             ),
-
+//
             Positioned(
                 left: 0,
                 right: 0,
