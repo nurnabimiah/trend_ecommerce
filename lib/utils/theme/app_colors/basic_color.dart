@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 const Color appScaffoldLightColor = Color(0xffffffff);
 
 ///primary and secondary color shade
-const Color appPrimaryColor = Color(0xff28a745);
+const Color appPrimaryColor = Colors.blue;
 const Color appSecondaryColor = Color(0xff001f3f);
 const Color appSecondaryColorFirst = Color(0xff0e2740);
 const Color appSecondaryColorSecond = Color(0xff22384e);
