@@ -45,12 +45,14 @@ class AppImages {
 
   /// onboarding image
   static const String appSmallLogo = 'assets/onboarding/app_small_logo.svg';
+  static const String appSmallLogo2 = 'assets/onboarding/applogo2.svg';
   static const String onboardBg1 = 'assets/onboarding/onboarding_bg1.svg';
   static const String onboardBg1Purchases = 'assets/onboarding/obboard_purchases_bg1.svg';
   static const String onboardBg2 = 'assets/onboarding/onboarding_bg2.svg';
   static const String onboardBg2TrackOrder= 'assets/onboarding/onboarding_track_bg2.svg';
   static const String onboardBg3 = 'assets/onboarding/onboarding_bg3.svg';
   static const String onboardBg3GetOrder= 'assets/onboarding/onboarding_getorder_bg3.svg';
+
 
 
 

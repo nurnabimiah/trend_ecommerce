@@ -1,15 +1,16 @@
 
+
+
 import 'package:ecommerce_app/utils/global/size_box.dart';
 import 'package:ecommerce_app/utils/images/app_images.dart';
 import 'package:ecommerce_app/utils/style/app_style.dart';
-import 'package:ecommerce_app/utils/theme/app_colors/all_colors_export.dart';
+import 'package:ecommerce_app/utils/theme/app_colors/basic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
-
-class OnboardingPage1 extends StatelessWidget {
-  const OnboardingPage1({super.key});
+class OnboardingPage2 extends StatelessWidget {
+  const OnboardingPage2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,28 +24,28 @@ class OnboardingPage1 extends StatelessWidget {
             Positioned(
                 left: 0,
                 right: 0,
-                top: -10.h,
-                child: SvgPicture.asset(AppImages.onboardBg1,width: 375.w,)
+                //top: -.h,
+                child: SvgPicture.asset(AppImages.onboardBg2,width: 375.w,)
             ),
 
             // app small logo
             Positioned(
-                left: 12.w,
-                top: 80.h,
+                left: 30.w,
+                top: 100.h,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SvgPicture.asset(AppImages.appSmallLogo,),
+                    SvgPicture.asset(AppImages.appSmallLogo2,),
                     szH10(),
-                    Text('Tredify Online Shop',style: myTxt16(color:whiteOnly ),),
+                    Text('Tredify Online Shop',style: myTxt16(color:appPrimaryColor ),),
                     szH8(),
 
                     // Divider
                     SizedBox(
                         width: 160.w,
-                        child: Divider(color: whiteOnly,height: 0.1.h,)),
+                        child: Divider(color: blackOnly,height: 0.1.h,)),
                     szH15(),
-                    Text("Professional App for your \n eCommerce business",style: myTxt14(color:whiteOnly ),),
+                    Text("Professional App for your \n eCommerce business",style: myTxt14(color:blackOnly ),),
 
 
                   ],
@@ -59,9 +60,9 @@ class OnboardingPage1 extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 12.0.w),
                   child: Column(
                     children: [
-                      SvgPicture.asset(AppImages.onboardBg1Purchases,height: 300.h,),
-                      szH28(),
-                      Text('Purchase Online !!',style: myTxt18(color:blackOnly,fontWeight: FontWeight.bold,fontSize: 20.sp),),
+                      SvgPicture.asset(AppImages.onboardBg2TrackOrder,height: 200.h,width: 200.w,),
+                      SizedBox(height: 100.h,),
+                      Text('Track Order !!',style: myTxt18(color:blackOnly,fontWeight: FontWeight.bold,fontSize: 20.sp),),
                       szH25(),
                       Text("No crowds, no stress— Just great deals with one\n press!",style: myTxt14(color:blackOnly ),),
 

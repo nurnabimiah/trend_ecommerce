@@ -4,6 +4,7 @@ import 'package:ecommerce_app/utils/global/classes/internet_connection_class.dar
 import 'package:ecommerce_app/utils/helper/local_notifications.dart';
 import 'package:ecommerce_app/utils/services/navigation_service/navigation_service_widget.dart';
 import 'package:ecommerce_app/utils/theme/app_colors/all_colors_export.dart';
+import 'package:ecommerce_app/view/features/onboarding/screens/onboarding_screen.dart';
 import 'package:ecommerce_app/view/features/onboarding/widget/onboarding_page1.dart';
 import 'package:ecommerce_app/view/features/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +66,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: appPrimaryColor),
             useMaterial3: true,
           ),
-          home: OnboardingPage1(),
+          home: OnboardingScreen(),
           // initialRoute: SplashScreen.routeName,
           getPages: AppRoutes.appRoutes,
           navigatorKey: NavigationService.navigatorKey,
