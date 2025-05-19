@@ -8,10 +8,8 @@ import 'package:ecommerce_app/view/features/products_landing_screen/products_lan
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import '../../../utils/theme/app_colors/basic_color.dart';
 import 'widgets/category_home_screen_widget.dart';
-import 'widgets/custom_home_screen_carousel_widget.dart';
 import '../../widgets/custom_widgets/custom_scaffold_widget.dart';
 import '../../widgets/custom_widgets/custom_sliver_grid_view_widget.dart';
 import '../../widgets/custom_widgets/custom_text_form_field.dart';
