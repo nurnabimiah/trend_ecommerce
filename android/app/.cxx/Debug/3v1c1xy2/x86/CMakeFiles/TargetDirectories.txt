@@ -1,0 +1,2 @@
+G:/softvance/trend_ecommerce/android/app/.cxx/Debug/3v1c1xy2/x86/CMakeFiles/edit_cache.dir
+G:/softvance/trend_ecommerce/android/app/.cxx/Debug/3v1c1xy2/x86/CMakeFiles/rebuild_cache.dir

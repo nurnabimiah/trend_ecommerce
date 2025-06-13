@@ -1,6 +1,7 @@
 
 import 'package:ecommerce_app/view/features/authentication/registration_screen/registration_screen.dart';
 import 'package:ecommerce_app/view/features/cart/screen/cart_screen.dart';
+import 'package:ecommerce_app/view/features/fevorite/screen/favorite_screen.dart';
 import 'package:ecommerce_app/view/features/menu_screen/menu_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -81,7 +82,7 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
       return const HomeScreen();
     }
     if (_selectedIndex == 1) {
-      return const RegistrationScreen();
+      return  FavoriteScreen();
     }
     if (_selectedIndex == 2) {
       return const CartScreen();
