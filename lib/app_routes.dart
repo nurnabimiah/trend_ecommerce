@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/view/features/address/screen/address_setup_screen.dart';
 import 'package:ecommerce_app/view/features/category_screen/category_screen.dart';
 import 'package:ecommerce_app/view/features/checkout/screen/check_out_screen.dart';
+import 'package:ecommerce_app/view/features/fevorite/screen/favorite_screen.dart';
 import 'package:ecommerce_app/view/features/home_screen/home_screen.dart';
 import 'package:ecommerce_app/view/features/bottom_nav_bar_screen/bottom_nav_bar_screen.dart';
 import 'package:ecommerce_app/view/features/my_order_screens/my_order_screen.dart';
@@ -36,6 +37,7 @@ class AppRoutes {
     GetPage(name: ProductsLandingScreen.routeName, page: () => const ProductsLandingScreen(), transition: Transition.rightToLeft, transitionDuration:  Duration(milliseconds: duration)),
     GetPage(name: MyOrderScreen.routeName, page: () => const MyOrderScreen(), transition: Transition.rightToLeft, transitionDuration:  Duration(milliseconds: duration)),
     GetPage(name: ProductDetailsScreen.routeName, page: () => const ProductDetailsScreen(), transition: Transition.rightToLeft, transitionDuration:  Duration(milliseconds: duration)),
+    GetPage(name: FavoriteScreen.routeName, page: () => const FavoriteScreen(), transition: Transition.rightToLeft, transitionDuration:  Duration(milliseconds: duration)),
 
     // checkout
     GetPage(name: CheckOutScreen.routeName, page: () =>  CheckOutScreen(), transition: Transition.rightToLeft, transitionDuration:  Duration(milliseconds: duration)),
