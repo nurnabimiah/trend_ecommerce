@@ -72,6 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
       "price": "100",
       "percentage": "30",
     },
+    ///
     {
       "image": "assets/client_slider/2.jpg",
       "product_name": "Product  name 2",
