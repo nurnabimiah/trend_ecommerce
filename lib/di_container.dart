@@ -65,7 +65,7 @@ Future<void> init() async {
   Get.lazyPut(() => ProductsLandingController(dioClient: sl(), productsLandingRepo: sl()), fenix: true);
   Get.lazyPut(() => OrderController(dioClient: sl(), orderRepo: sl()), fenix: true);
 
-/// External
+/// External setup
   final sharedPreferences = await SharedPreferences.getInstance();
   sl.registerLazySingleton(() => sharedPreferences);
   sl.registerLazySingleton(() => Dio());
