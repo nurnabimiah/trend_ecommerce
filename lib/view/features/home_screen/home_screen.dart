@@ -8,10 +8,8 @@ import 'package:ecommerce_app/view/features/products_landing_screen/products_lan
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import '../../../utils/theme/app_colors/basic_color.dart';
 import 'widgets/category_home_screen_widget.dart';
-import 'widgets/custom_home_screen_carousel_widget.dart';
 import '../../widgets/custom_widgets/custom_scaffold_widget.dart';
 import '../../widgets/custom_widgets/custom_sliver_grid_view_widget.dart';
 import '../../widgets/custom_widgets/custom_text_form_field.dart';
@@ -155,6 +153,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   );
                 },
               ),
+
+
               flexibleSpace: FlexibleSpaceBar(
                 collapseMode: CollapseMode.parallax,
                 background: Container(color: appPrimaryColor),
@@ -163,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
               bottom: PreferredSize(
-                preferredSize: Size.fromHeight(25),
+                preferredSize: Size.fromHeight(60),
                 child: GestureDetector(
                   onTap: (){
 
@@ -217,6 +217,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverToBoxAdapter(
                 child: szH15(),
             ),
+
             SliverToBoxAdapter(
               child: CategoryHomeScreenWidget(
                 items: items,
