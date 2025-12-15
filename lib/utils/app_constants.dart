@@ -6,7 +6,7 @@ class AppConstants {
   static const String imageUrl = "";
 
   /// App Name
-  static const String appName = 'Trivium';
+  static const String appName = 'Trendify';
 
   /// API Url
   static const categories  = "category";

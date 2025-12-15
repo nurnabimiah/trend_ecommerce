@@ -8,6 +8,7 @@ import 'package:ecommerce_app/view/features/products_landing_screen/products_lan
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../utils/style/app_style.dart';
 import '../../../utils/theme/app_colors/basic_color.dart';
 import 'widgets/category_home_screen_widget.dart';
 import '../../widgets/custom_widgets/custom_scaffold_widget.dart';
@@ -22,12 +23,12 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-//
+
 class _HomeScreenState extends State<HomeScreen> {
   final productLandingController = Get.find<ProductsLandingController>();
   List<dynamic> items = [
     {
-      "image": "assets/client_slider/1.jpg",
+      "image": "assets/product_image/product_image.png",
       "product_name": "Apple 16",
       "discount": "10",
       "rating": "3",
@@ -36,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
       "percentage": "10",
     },
     {
-      "image": "assets/client_slider/0.jpg",
+      "image": "assets/product_image/product_image.png",
       "product_name": "Samsung S Ultra",
       "discount": "10",
       "rating": "4",
@@ -45,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
       "percentage": "15",
     },
     {
-      "image": "assets/client_slider/1.jpg",
+      "image": "assets/product_image/product_image.png",
       "product_name": "Dell Monitor",
       "discount": "10",
       "rating": "4.5",
@@ -54,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
       "percentage": "5",
     },
     {
-      "image": "assets/client_slider/2.jpg",
+      "image": "assets/product_image/product_image.png",
       "product_name": "Fashion Clothes Half Sleeve",
       "discount": "10",
       "rating": "4.8",
@@ -63,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
       "percentage": "50",
     },
     {
-      "image": "assets/client_slider/1.jpg",
+      "image": "assets/product_image/product_image.png",
       "product_name": "Product  name 2",
       "discount": "10",
       "rating": "3.5",
@@ -73,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
     },
     ///
     {
-      "image": "assets/client_slider/2.jpg",
+      "image": "assets/product_image/product_image.png",
       "product_name": "Product  name 2",
       "discount": "10",
       "rating": "4.5",
@@ -82,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
       "percentage": "60",
     },
     {
-      "image": "assets/client_slider/0.jpg",
+      "image": "assets/product_image/product_image.png",
       "product_name": "Product  dfdf dfd fd fdf df df d name 2",
       "discount": "10",
       "rating": "5",
@@ -97,8 +98,6 @@ class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();
   final GlobalKey ke1 = GlobalKey();
   final GlobalKey ke2 = GlobalKey();
-  static String baseFile = "assets/client_slider/";
-  List<String> clientSlider = ["${baseFile}0.jpg", "${baseFile}1.jpg", "${baseFile}2.jpg", "${baseFile}3.jpg"];
   int _activeIndex = 0;
   void setActiveIndexValue(int index){
     _activeIndex = index;
@@ -123,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-//
+
   @override
   Widget build(BuildContext context) {
     return CustomScaffoldWidget(
@@ -143,17 +142,12 @@ class _HomeScreenState extends State<HomeScreen> {
               collapsedHeight: 27,
               toolbarHeight: 27,
               backgroundColor: appPrimaryColor,
-              //backgroundColor: Colors.red,
-              leading: Builder(
-                builder: (context) {
-                  return IconButton(
-                    icon: Icon(Icons.menu, color: Colors.white),
-                    onPressed: () {
-                      Scaffold.of(context).openDrawer(); // Opens the drawer
-                    },
-                  );
-                },
+              title: Text(
+                'Your App Name',
+                style: myTxt16(color:Colors.white ),
               ),
+              centerTitle: false,
+
 
 
               flexibleSpace: FlexibleSpaceBar(
@@ -162,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
 
 
-//
+
               bottom: PreferredSize(
                 preferredSize: Size.fromHeight(60),
                 child: GestureDetector(
