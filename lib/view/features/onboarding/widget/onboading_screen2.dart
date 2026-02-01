@@ -14,69 +14,68 @@ class OnboardingPage2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        height:MediaQuery.of(context).size.height ,
-        color: appBackGroundColor,
-        child: Stack(
-          children: [
+    return Container(
+      height:MediaQuery.of(context).size.height ,
+      color: appBackGroundColor,
+      child: Stack(
+        children: [
 
-            Positioned(
-                left: 0,
-                right: 0,
-                //top: -.h,
-                child: SvgPicture.asset(AppImages.onboardBg2,width: 375.w,)
-            ),
+          Positioned(
+              left: 0,
+              right: 0,
+              //top: -.h,
+              child: SvgPicture.asset(AppImages.onboardBg2,width: 375.w,)
+          ),
 
-            // app small logo
-            Positioned(
-                left: 30.w,
-                top: 100.h,
+          // app small logo
+          Positioned(
+              left: 30.w,
+              top: 100.h,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SvgPicture.asset(AppImages.appSmallLogo2,),
+                  szH10(),
+                  Text('Tredify Online Shop',style: myTxt16(color:appPrimaryColor ),),
+                  szH8(),
+
+                  // Divider
+                  SizedBox(
+                      width: 160.w,
+                      child: Divider(color: blackOnly,height: 0.1.h,)),
+                  szH15(),
+                  Text("Professional App for your \n eCommerce business",style: myTxt14(color:blackOnly ),),
+
+
+                ],
+              )
+          ),
+
+          Positioned(
+              left: 0,
+              right: 0,
+              top: 290.h,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.0.w),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SvgPicture.asset(AppImages.appSmallLogo2,),
-                    szH10(),
-                    Text('Tredify Online Shop',style: myTxt16(color:appPrimaryColor ),),
-                    szH8(),
-
-                    // Divider
-                    SizedBox(
-                        width: 160.w,
-                        child: Divider(color: blackOnly,height: 0.1.h,)),
-                    szH15(),
-                    Text("Professional App for your \n eCommerce business",style: myTxt14(color:blackOnly ),),
+                    SvgPicture.asset(AppImages.onboardBg2TrackOrder,height: 200.h,width: 200.w,),
+                    SizedBox(height: 100.h,),
+                    Text('Track Order !!',style: myTxt18(color:blackOnly,fontWeight: FontWeight.bold,fontSize: 20.sp),),
+                    szH25(),
+                    Text("No crowds, no stress— Just great deals with one\n press!",style: myTxt14(color:blackOnly ),),
 
 
                   ],
-                )
-            ),
+                ),
+              )
+          ),
 
-            Positioned(
-                left: 0,
-                right: 0,
-                top: 290.h,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12.0.w),
-                  child: Column(
-                    children: [
-                      SvgPicture.asset(AppImages.onboardBg2TrackOrder,height: 200.h,width: 200.w,),
-                      SizedBox(height: 100.h,),
-                      Text('Track Order !!',style: myTxt18(color:blackOnly,fontWeight: FontWeight.bold,fontSize: 20.sp),),
-                      szH25(),
-                      Text("No crowds, no stress— Just great deals with one\n press!",style: myTxt14(color:blackOnly ),),
-
-
-                    ],
-                  ),
-                )
-            ),
-
-          ],
-        ),
-
+        ],
       ),
 
     );
+
+
   }
 }
