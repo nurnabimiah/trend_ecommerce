@@ -1,6 +1,6 @@
 
 
-import 'package:ecommerce_app/view/features/bottom_nav_bar_screen/bottom_nav_bar_screen.dart';
+import 'package:ecommerce_app/view/features/authentication/login_screen/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -28,6 +28,6 @@ class OnboardingController extends GetxController {
   }
 
   void finishOnboarding() {
-    Get.offAllNamed(BottomNavBarScreen.routeName);
+    Get.offAllNamed(LoginScreen.routeName);
   }
 }

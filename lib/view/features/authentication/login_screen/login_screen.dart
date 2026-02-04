@@ -2,6 +2,8 @@ import 'package:ecommerce_app/view/features/authentication/registration_screen/r
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../../utils/images/app_images.dart';
+import '../../bottom_nav_bar_screen/bottom_nav_bar_screen.dart';
 import 'login_controller.dart';
 import '../../../../utils/global/classes/email_validation.dart';
 import '../../../../utils/global/classes/password_validation.dart';
@@ -35,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_formKey.currentState!.validate()){
       await controller.login().then((value){
         if(value == success){
-        //  Get.offNamedUntil(LandingScreen.routeName, (route) => false);
+        // Get.offNamedUntil(LandingScreen.routeName, (route) => false);
         }else{
 
         }
@@ -85,6 +87,11 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.max,
               children: [
+
+                SizedBox(height: 40.h,),
+
+                Image.asset('assets/icons/app_main_logo.png',height: 150.h,width: 150.w,),
+
                 Column(
                   children: [
                     Text(
@@ -188,8 +195,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   return CustomElevatedButton(
                     themeIndex: 0,
                     textWidget:  controller.isLoading.value ? const CustomCircularProgressIndicator() :  "Login",
-                    onPressed: !controller.buttonVisibility.value || controller.isLoading.value ? null : () async{
-                      login();
+                    onPressed: !controller.buttonVisibility.value || controller.isLoading.value ? null : ()
+                    async{
+                      Get.offNamedUntil(BottomNavBarScreen.routeName, (route) => false);
+                      // login();
                     },
                   );
                 }),
