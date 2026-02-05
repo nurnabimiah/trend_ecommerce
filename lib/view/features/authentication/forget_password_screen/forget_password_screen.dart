@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../../utils/images/app_images.dart';
 import 'forget_password_controller.dart';
 import '../../../../utils/global/classes/email_validation.dart';
 import '../../../../utils/global/global_variable.dart';
@@ -61,6 +63,10 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(height: 100.h),
+
+                  Image.asset(AppImages.appMainLogo,height: 150.h,width: 150.w,),
+
                   Text(
                     'Forgot Password',
                     style: myTxtCustom(color: Colors.black, fontSize: 24, fontWeight: FontWeight.w600),
@@ -102,7 +108,8 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                   themeIndex: 0,
                   textWidget:  controller.isLoading.value ? const CustomCircularProgressIndicator() :  "Submit",
                   onPressed: !controller.buttonVisibility.value || controller.isLoading.value ? null : () async{
-                    forgetPassword();
+                    Get.toNamed(OtpScreen.routeName);
+                    // forgetPassword();
                   },
                 );
               }),
