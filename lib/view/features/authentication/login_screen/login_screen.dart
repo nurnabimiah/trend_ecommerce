@@ -51,6 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
     controller.isLoading.value = false;
   }
 
+
   @override
   void initState() {
     // TODO: implement initState
@@ -88,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisSize: MainAxisSize.max,
               children: [
 
-                SizedBox(height: 40.h,),
+                SizedBox(height: 100.h),
 
                 Image.asset('assets/icons/app_main_logo.png',height: 150.h,width: 150.w,),
 
