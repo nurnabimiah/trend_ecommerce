@@ -135,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             SliverAppBar(
               floating: true,
-              pinned: true,
+              pinned: false,
               snap: true,
               automaticallyImplyLeading: false,
               expandedHeight: 130.0,
@@ -254,4 +254,33 @@ class _HomeScreenState extends State<HomeScreen> {
 
   }
 
+}
+
+
+
+class SearchHeaderDelegate extends SliverPersistentHeaderDelegate {
+  final Widget child;
+
+  SearchHeaderDelegate({required this.child});
+
+  @override
+  double get minExtent => 72;
+  @override
+  double get maxExtent => 72;
+
+  @override
+  Widget build(
+      BuildContext context,
+      double shrinkOffset,
+      bool overlapsContent,
+      ) {
+    return Container(
+      color: appPrimaryColor,
+      padding: const EdgeInsets.fromLTRB(14, 10, 12, 10),
+      child: child,
+    );
+  }
+
+  @override
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) => true;
 }
