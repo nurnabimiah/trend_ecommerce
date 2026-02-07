@@ -4,6 +4,7 @@ import 'package:ecommerce_app/data/repositories/remote/order_repo.dart';
 import 'package:ecommerce_app/utils/app_constants.dart';
 import 'package:ecommerce_app/view/features/category_screen/category_controller.dart';
 import 'package:ecommerce_app/view/features/my_order_screens/order_controller.dart';
+import 'package:ecommerce_app/view/features/onboarding/controller/onboarding_controller.dart';
 import 'package:ecommerce_app/view/features/products_landing_screen/products_landing_controller.dart';
 import 'package:ecommerce_app/view/features/sub_category_screen/sub_category_controller.dart';
 import 'package:get/get.dart';
@@ -50,6 +51,8 @@ Future<void> init() async {
 
 /// Controller
   Get.lazyPut(() => SplashController(dioClient: sl()), fenix: true);
+  Get.lazyPut(() => OnboardingController(sharedPreferences: sl()), fenix: true);
+
 
   /// Controller
   Get.lazyPut(() => SplashController(dioClient: sl()), fenix: true);

@@ -10,7 +10,10 @@ import '../widget/onboarding_page1.dart';
 
 class OnboardingScreen extends StatelessWidget {
   static const String routeName = '/onboarding';
-  final controller = Get.put(OnboardingController());
+
+
+
+  OnboardingScreen({super.key});
 
   final onboardingData = [
     OnboardingPage1(),
@@ -18,10 +21,11 @@ class OnboardingScreen extends StatelessWidget {
     OnboardingPage1(),
   ];
 
-  OnboardingScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<OnboardingController>();
     return Scaffold(
       backgroundColor: appBackGroundColor,
       body: Column(
