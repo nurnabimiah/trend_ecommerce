@@ -24,6 +24,11 @@ class SharedPreferencesClass{
   static const String fcmToken = "fcmToken";
   static const String loginRememberMe = "loginRememberMe";
 
+  // for onboarding
+  static const String onboarding = 'onboard';
+
+
+
 
   static setValue(String key,String? value) async{
     SharedPreferences prefs = await SharedPreferences.getInstance();

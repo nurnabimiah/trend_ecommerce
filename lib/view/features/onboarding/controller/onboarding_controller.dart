@@ -5,6 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../../data/repositories/local/sharepreferences_class.dart';
+
 class OnboardingController extends GetxController {
   final SharedPreferences? sharedPreferences;
 
@@ -33,7 +35,12 @@ class OnboardingController extends GetxController {
     pageIndex.value = index;
   }
 
-  void finishOnboarding() {
+  void finishOnboarding() async {
+    await SharedPreferencesClass.setBoolValue(
+        SharedPreferencesClass.onboarding, true);
+
     Get.offAllNamed(LoginScreen.routeName);
   }
+
+
 }

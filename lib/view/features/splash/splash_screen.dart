@@ -1,15 +1,13 @@
 import 'dart:async';
 import 'package:ecommerce_app/utils/images/app_images.dart';
-import 'package:ecommerce_app/view/features/home_screen/home_screen.dart';
 import 'package:ecommerce_app/view/features/onboarding/screens/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../data/repositories/local/sharepreferences_class.dart';
 import '../../../utils/theme/app_colors/basic_color.dart';
-import '../../widgets/custom_widgets/bounce_animation_builder_widget.dart';
 import '../authentication/login_screen/login_screen.dart';
 import '../bottom_nav_bar_screen/bottom_nav_bar_screen.dart';
-import '../my_order_screens/order_details_screen.dart';
+
 
 
 class SplashScreen extends StatefulWidget {
@@ -28,15 +26,27 @@ class _SplashScreenState extends State<SplashScreen> {
     return token == null ? false : true;
   }
 
+  Future<bool> checkOnboarding() async {
+    bool? value = await SharedPreferencesClass
+        .getBoolValue(SharedPreferencesClass.onboarding);
+
+    return value ?? false;
+  }
+
   startTimer() {
     Timer(const Duration(seconds: 2), () async {
-      if(await checkToken()){
+
+      bool hasToken = await checkToken();
+      bool hasOnboarded = await checkOnboarding();
+
+      if (hasToken) {
         Get.offAllNamed(BottomNavBarScreen.routeName);
-        // Get.offAllNamed(OrderDetailsScreen.routeName);
-      }else{
-       // Get.offAllNamed(BottomNavBarScreen.routeName);
-        Get.offAllNamed(OnboardingScreen.routeName);
-        // Get.offAllNamed(OrderDetailsScreen.routeName);
+      } else {
+        if (hasOnboarded) {
+          Get.offAllNamed(LoginScreen.routeName);
+        } else {
+          Get.offAllNamed(OnboardingScreen.routeName);
+        }
       }
     });
   }
