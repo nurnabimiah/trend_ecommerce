@@ -43,9 +43,11 @@ class _SplashScreenState extends State<SplashScreen> {
         Get.offAllNamed(BottomNavBarScreen.routeName);
       } else {
         if (hasOnboarded) {
-          Get.offAllNamed(LoginScreen.routeName);
+          Get.offAllNamed(BottomNavBarScreen.routeName);
+          // Get.offAllNamed(LoginScreen.routeName);
         } else {
-          Get.offAllNamed(OnboardingScreen.routeName);
+          Get.offAllNamed(BottomNavBarScreen.routeName);
+          // Get.offAllNamed(OnboardingScreen.routeName);
         }
       }
     });
