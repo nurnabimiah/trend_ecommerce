@@ -31,6 +31,15 @@ void main() async{
   await SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitUp],
   );
+
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: appPrimaryColor,
+      statusBarIconBrightness: Brightness.light,
+    ),
+  );
+
+
   try{
     await localNotifications.initializeNotification();
   }catch(e){

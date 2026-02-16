@@ -6,6 +6,7 @@ import 'package:ecommerce_app/view/features/product_details/product_details_scre
 import 'package:ecommerce_app/view/features/products_landing_screen/products_landing_controller.dart';
 import 'package:ecommerce_app/view/features/products_landing_screen/products_landing_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../utils/style/app_style.dart';
@@ -47,8 +48,6 @@ class _HomeScreenState extends State<HomeScreen> {
       "price": "100",
       "percentage": "15",
     },
-
-
     {
       "image": "assets/product_image/product_image.png",
       "product_name": "Apple 16",
@@ -67,46 +66,61 @@ class _HomeScreenState extends State<HomeScreen> {
       "price": "100",
       "percentage": "15",
     },
-
   ];
 
   bool _isLoading = false;
 
   @override
   Widget build(BuildContext context) {
+    final topPadding = MediaQuery.of(context).padding.top;
+
     return CustomScaffoldWidget(
       scaffoldBackGroundColor: appBackGroundColor,
-      body: SafeArea(
-        top: true,
-        bottom: false,
-        child: CustomScrollView(
-          controller: _scrollController,
-          slivers: [
+      body: CustomScrollView(
+        controller: _scrollController,
+        slivers: [
 
-            /// 🔹 APP BAR (Design same)
-            SliverAppBar(
-              floating: false,
-              pinned: false,
-              snap: false,
-              automaticallyImplyLeading: false,
-              backgroundColor: appPrimaryColor,
-              toolbarHeight: 60,
-              title: Text(
-                'Your App Name',
-                style: myTxt16(color: Colors.white),
-              ),
-              actions: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Icon(Icons.notifications, color: Colors.white),
+          /// 🔥 APP BAR (SCROLL করলে hide হবে)
+          SliverAppBar(
+            pinned: false,
+            floating: false,
+            snap: false,
+            automaticallyImplyLeading: false,
+            backgroundColor: appPrimaryColor,
+            expandedHeight: 70 + topPadding,
+            flexibleSpace: FlexibleSpaceBar(
+              background: Container(
+                padding: EdgeInsets.only(top: topPadding),
+                color: appPrimaryColor,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding:
+                      const EdgeInsets.symmetric(horizontal: 16),
+                      child: Text(
+                        'Your App Name',
+                        style: myTxt16(color: Colors.white),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child:
+                      Icon(Icons.notifications, color: Colors.white),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
+          ),
 
-            /// 🔹 STICKY SEARCH (Design same, just safe positioned)
-            SliverPersistentHeader(
-              pinned: true,
-              delegate: SearchHeaderDelegate(
+          /// ✅ PINNED SEARCH BAR
+          SliverPersistentHeader(
+            pinned: true,
+            delegate: SearchHeaderDelegate(
+              child: Container(
+                color: appPrimaryColor,
+                padding: const EdgeInsets.fromLTRB(14, 10, 12, 10),
                 child: CustomTextFormField(
                   controller:
                   productLandingController.searchController,
@@ -127,55 +141,59 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
+          ),
 
-            SliverToBoxAdapter(child: szH30()),
+          SliverToBoxAdapter(child: szH20()),
 
-            SliverToBoxAdapter(
-              child: CategoryHomeScreenWidget(items: items),
+          /// CATEGORY
+          SliverToBoxAdapter(
+            child: CategoryHomeScreenWidget(items: items),
+          ),
+
+          SliverToBoxAdapter(child: szH8()),
+
+          /// BEST SELLING
+          SliverToBoxAdapter(
+            child: BestSellingHomeScreenWidget(items: items),
+          ),
+
+          SliverToBoxAdapter(child: szH20()),
+
+
+          /// GRID
+          SliverPadding(
+            padding: screenPadding(),
+            sliver: CustomSliverGridViewWidget(
+              containerOnTap: () {
+                Get.toNamed(ProductDetailsScreen.routeName);
+              },
+              isLoading: _isLoading,
+              scrollController: _scrollController,
+              items: items,
+              fetchData: () {},
+              loadingWidget:
+              const CircularProgressIndicator(),
             ),
+          ),
 
-            SliverToBoxAdapter(child: szH8()),
-
-            SliverToBoxAdapter(
-              child: BestSellingHomeScreenWidget(items: items),
-            ),
-
-            SliverToBoxAdapter(child: szH30()),
-
-            SliverPadding(
-              padding: screenPadding(),
-              sliver: CustomSliverGridViewWidget(
-                containerOnTap: () {
-                  Get.toNamed(
-                      ProductDetailsScreen.routeName);
-                },
-                isLoading: _isLoading,
-                scrollController: _scrollController,
-                items: items,
-                fetchData: () {},
-                loadingWidget:
-                const CircularProgressIndicator(),
-              ),
-            ),
-          ],
-        ),
+          SliverToBoxAdapter(child: szH30()),
+        ],
       ),
     );
   }
 }
 
-/// 🔹 Search Sticky Delegate (Design untouched)
-class SearchHeaderDelegate
-    extends SliverPersistentHeaderDelegate {
+/// Search Sticky Delegate (Design untouched)
+class SearchHeaderDelegate extends SliverPersistentHeaderDelegate {
   final Widget child;
 
   SearchHeaderDelegate({required this.child});
 
   @override
-  double get minExtent => 72;
+  double get minExtent => 70;
 
   @override
-  double get maxExtent => 72;
+  double get maxExtent => 70;
 
   @override
   Widget build(
@@ -183,19 +201,22 @@ class SearchHeaderDelegate
       double shrinkOffset,
       bool overlapsContent,
       ) {
+    final topPadding = MediaQuery.of(context).padding.top;
+
     return Container(
       color: appPrimaryColor,
-      padding:
-      const EdgeInsets.fromLTRB(14, 10, 12, 10),
+      padding: EdgeInsets.only(
+        top: topPadding,   // ✅ IMPORTANT FIX
+        left: 14,
+        right: 12,
+        bottom: 10,
+      ),
       child: child,
     );
   }
 
   @override
-  bool shouldRebuild(
-      covariant SliverPersistentHeaderDelegate
-      oldDelegate) =>
-      false;
+  bool shouldRebuild(oldDelegate) => false;
 }
 
 
